@@ -4,10 +4,10 @@ import ItemList from "./ItemList"
 
 export default function CreateList() {
     return (
-        <div>
+        <ol className="listContainer">
             {data.hits.map((element, index) => {
                 return <ItemList key={element.objectID} news={element} />;
             })};
-        </div>
+        </ol>
     );
 };
