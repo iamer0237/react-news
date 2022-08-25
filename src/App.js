@@ -3,7 +3,6 @@ import List from "./components/List";
 
 function App() {
   return (
-    <div className="App">
       <div>
         <div className='header'>
           <img className="logo" src="https://cdn.iconscout.com/icon/free/png-256/logo-3446031-2882300.png" />
