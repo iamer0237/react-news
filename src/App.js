@@ -1,3 +1,4 @@
+
 import "./App.css";
 import List from "./components/List"
 //import NewsList from "./components/NewsList";
@@ -6,6 +7,12 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import SearchForm from "./SearchForm";
 //import SearchForm from "./SearchForm";
+
+import './App.css';
+import List from "./components/List";
+import Loading from "./components/Loading"
+
+
 function App() {
   const [newsItems, setNewsItems] = useState([]);
   const [query, setQuery] = useState("");
@@ -24,11 +31,13 @@ function App() {
   },[query]);
 
   return (
+
     <div>  
          <Header />
          <SearchForm setQuery= {setQuery}/>
    <List data = {newsItems} />
    
+
     </div>
   );
 }

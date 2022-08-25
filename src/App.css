@@ -67,7 +67,10 @@
 .navItem {
   margin-right: 10px;
   margin-bottom: 10px;
+
   text-decoration: none;
+
+
 }
 
 .newsTitle {
@@ -84,5 +87,8 @@
   padding-left: 10px;
   background-color: darkorange;
   border-bottom: 3px solid white;
+
   text-decoration: none;
+=======
+
 }
