@@ -1,5 +1,6 @@
 import './App.css';
 import List from "./components/List";
+import Loading from "./components/Loading"
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <a href='https://www.google.de' className='navItem'>Submit</a>
         </div>
       </div>
+      <Loading />
       <List />
     </div>
   );
