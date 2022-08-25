@@ -1,13 +1,12 @@
 import React from "react"
-import data from "./../hackernews.json"
 import ItemList from "./ItemList"
 
-export default function CreateList() {
+export default function CreateList(props) {
     return (
-        <ol className="listContainer">
-            {data.hits.map((element, index) => {
-                return <ItemList key={element.objectID} news={element} />;
+        <div className="listContainer">
+            {props.data.map((element, index) => {
+                return <ItemList key={element.objectID} news={element} index={index + 1} />;
             })};
-        </ol>
+        </div>
     );
 };

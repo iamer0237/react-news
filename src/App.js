@@ -1,24 +1,34 @@
-import './App.css';
-import List from "./components/List";
-
+import "./App.css";
+import List from "./components/List"
+//import NewsList from "./components/NewsList";
+import Header from "./Header";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import SearchForm from "./SearchForm";
+//import SearchForm from "./SearchForm";
 function App() {
+  const [newsItems, setNewsItems] = useState([]);
+  const [query, setQuery] = useState("");
+
+  console.log(newsItems);
+  useEffect(() => {
+    axios
+      .get(`http://hn.algolia.com/api/v1/search?query=${query}`)
+      .then((response) => {
+        setNewsItems(response.data.hits);
+        console.log(response);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  },[query]);
+
   return (
-      <div>
-        <div className='header'>
-          <img className="logo" src="https://cdn.iconscout.com/icon/free/png-256/logo-3446031-2882300.png" />
-          <h1>Hacker News</h1>
-        </div>
-        <div className="nav">
-          <a href=''className='navItem'>New</a>
-          <a href=''className='navItem'>Past</a>
-          <a href=''className='navItem'>Comments</a>
-          <a href=''className='navItem'>Ask</a>
-          <a href=''className='navItem'>Show</a>
-          <a href=''className='navItem'>Jobs</a>
-          <a href=''className='navItem'>Submit</a>
-        </div>
-      </div>
-      <List />
+    <div>  
+         <Header />
+         <SearchForm setQuery= {setQuery}/>
+   <List data = {newsItems} />
+   
     </div>
   );
 }

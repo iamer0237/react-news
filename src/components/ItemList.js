@@ -1,17 +1,23 @@
 import React from "react"
 
 export default function ItemList(props) {
+    const shortUrl = (url) => {
+        if (url) {
+            const array = url.split('/')
+            return `${array[0]}//${array[2]}`
+        }
+    }
+
     return (
-        <li className="newsFeed">
+        <div className="newsFeed">
             <div className="newsTitle">
-                <h4>{props.news.title}</h4>
+                <div className="numbers">{props.index}.</div>
+                <a href={props.news.url} >{props.news.title}</a>
+                <div>{shortUrl(props.news.url)}</div>
             </div>
             <div className="newsInfo">
-                <div><p>{props.news.points}</p></div>
-                <div><p>{props.news.author}</p></div>
-                <div><p>{props.news.num_comments}</p></div>
-                <div><p>{props.news.objectID}</p></div>
+                <div><p>{props.news.points} points by {props.news.author} | {props.news.num_comments} comments | ID: {props.news.objectID}</p></div>
             </div>
-        </li>
+        </div>
     );
 };
