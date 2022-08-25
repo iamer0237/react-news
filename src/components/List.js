@@ -6,7 +6,7 @@ export default function CreateList(props) {
         <div className="listContainer">
 
 
-            {data.hits.map((element, index) => {
+            {props.data.map((element, index) => {
 
                 return <ItemList key={element.objectID} news={element} index={index + 1} />;
             })};

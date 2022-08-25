@@ -8,22 +8,23 @@ import { useEffect, useState } from "react";
 import SearchForm from "./SearchForm";
 //import SearchForm from "./SearchForm";
 
-import './App.css';
-import List from "./components/List";
 import Loading from "./components/Loading"
 
 
 function App() {
   const [newsItems, setNewsItems] = useState([]);
   const [query, setQuery] = useState("");
+  const [loading, setLoading] = useState(false);
 
   console.log(newsItems);
   useEffect(() => {
+    setLoading(true)
     axios
       .get(`http://hn.algolia.com/api/v1/search?query=${query}`)
       .then((response) => {
         setNewsItems(response.data.hits);
         console.log(response);
+        setLoading(false)
       })
       .catch((err) => {
         console.log(err);
@@ -35,7 +36,8 @@ function App() {
     <div>  
          <Header />
          <SearchForm setQuery= {setQuery}/>
-   <List data = {newsItems} />
+         {loading? <Loading /> : <List data = {newsItems} />}
+   
    
 
     </div>
