@@ -14,8 +14,7 @@ export default function ItemList(props) {
                 <div className="numbers">{props.index}.</div>
 
 
-                <a href={props.news.url} target="_blank">{props.news.title}</a>
-
+                <a className="links" href={props.news.url} target="_blank">{props.news.title}</a>
                 <div>{shortUrl(props.news.url)}</div>
             </div>
             <div className="newsInfo">

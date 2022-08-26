@@ -6,17 +6,17 @@ function Header() {
       <div className="App">
         <div className='headerBar'>
           <div className='heading'>
-            <img className="logo" src="https://cdn.iconscout.com/icon/free/png-256/logo-3446031-2882300.png" alt="Just a Logo" />
+            <img className="logo" src="https://seeklogo.com/images/A/anonymous-logo-7E968E8797-seeklogo.com.png" alt="Anonymous Logo" />
             <h1>Hacker News</h1>
           </div>
           <div className="nav">
-            <a href='https://www.google.de' className='navItem'>New</a>
-            <a href='https://www.google.de' className='navItem'>Past</a>
-            <a href='https://www.google.de' className='navItem'>Comments</a>
-            <a href='https://www.google.de' className='navItem'>Ask</a>
-            <a href='https://www.google.de' className='navItem'>Show</a>
-            <a href='https://www.google.de' className='navItem'>Jobs</a>
-            <a href='https://www.google.de' className='navItem'>Submit</a>
+            <a href='https://www.google.de' className='navItem headerLinks'>New</a>
+            <a href='https://www.google.de' className='navItem headerLinks'>Past</a>
+            <a href='https://www.google.de' className='navItem headerLinks'>Comments</a>
+            <a href='https://www.google.de' className='navItem headerLinks'>Ask</a>
+            <a href='https://www.google.de' className='navItem headerLinks'>Show</a>
+            <a href='https://www.google.de' className='navItem headerLinks'>Jobs</a>
+            <a href='https://www.google.de' className='navItem headerLinks'>Submit</a>
           </div>
         </div>
  

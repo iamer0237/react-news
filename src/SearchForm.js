@@ -13,11 +13,10 @@ props.setQuery (search)
 
 
   return (
-    <div>
+    <div className="searchContainer">
       <form onSubmit={handleSubmit}>
-        <input type="text" onChange ={handleChange} value={search} />
-        <button  >Search</button>
-        <h2>Search Results:</h2>
+        <input className="searchInput" type="text" onChange ={handleChange} value={search} />
+        <button className="searchButton">Search</button>
       </form>
     </div>
   );
