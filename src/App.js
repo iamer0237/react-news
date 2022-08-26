@@ -33,7 +33,7 @@ function App() {
 
   return (
 
-    <div>  
+    <div className="mainContainer">  
          <Header />
          <SearchForm setQuery= {setQuery}/>
          {loading? <Loading /> : <List data = {newsItems} />}
